@@ -1,6 +1,6 @@
 # config list
 ```
-basic config {
+1. basic config {
   hostname
   banner
   no ip domain
@@ -11,11 +11,11 @@ basic config {
   domain-name
   password-encryption
  }
-interface {
+2. interface {
   ip assignment
   sub-interface
 }
-ospf {
+3. ospf {
   ospf pid
   router id
   <ospf included int>
@@ -23,7 +23,7 @@ ospf {
   def route-injection
   ( int-selection, hello interval & priority )
 }
-rip
-static route
-dhcp
+3. rip
+4. static route
+5. dhcp
 ```
