@@ -1,3 +1,4 @@
+#config list
 ```
 basic config {
   hostname
