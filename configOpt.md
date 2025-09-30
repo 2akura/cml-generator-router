@@ -11,8 +11,18 @@ basic config {
   domain-name
   password-encryption
  }
-interface
-ospf
+interface {
+  ip assignment
+  sub-interface
+}
+ospf {
+  ospf pid
+  router id
+  <ospf included int>
+  pssive int
+  def route-injection
+  ( int-selection, hello interval & priority )
+}
 rip
 static route
 dhcp
