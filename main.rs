@@ -26,13 +26,12 @@ pub fn takejson(somejson: &str) {
     let cfg: Config = serde_json::from_str(somejson).unwrap();
 
     let Config {hostname, banner, password, domain_name} = cfg;
-    preservevalue (hostname, banner, password, domain_name);
+    preservevalue (hostname.clone(), banner.clone(), password.clone(), domain_name.clone());
+    let some = preservevalue(hostname.clone(), banner.clone(), password.clone(), domain_name.clone());
 }
     
 fn preservevalue(hostname: Option<String>, banner: Option<String>, password: Option<String>, domain_name: Option<String>) -> Vec<(String, String)> {
-    //some EmptyString None
-    //some IsFalse string None
-    //some SomethingValid pass as borrow, and push into vec
+    //for every !x.is_empty push as an aftermath into a vec
     //do this rigorously for every variable so each of em could be distinguished for translate into token process
     let mut preserved: Vec<(String, String)> = Vec::new();
 
@@ -57,17 +56,12 @@ fn preservevalue(hostname: Option<String>, banner: Option<String>, password: Opt
     if let Some(d) = domain_name {
         if !d.is_empty() {
             preserved.push(("domain_name".to_string(), d));
+        
         }
     }
 
-    preserved
+ preserved
 }
 
 
-fn intotoken(){
-    //map received val into some var
-    //use the var, and translate into token accordingly
-    let for_translate = preservevalue();
-     
-}
 fn main (){}
