@@ -24,13 +24,9 @@ struct Output {
 pub fn takejson(somejson: &str) {
 
     let cfg: Config = serde_json::from_str(somejson).unwrap();
-
-    let Config {hostname, banner, password, domain_name} = cfg;
-    preservevalue (hostname.clone(), banner.clone(), password.clone(), domain_name.clone());
-    let some = preservevalue(hostname.clone(), banner.clone(), password.clone(), domain_name.clone());
-}
+    let Config { hostname, banner, password, domain_name } = cfg;
     
-fn preservevalue(hostname: Option<String>, banner: Option<String>, password: Option<String>, domain_name: Option<String>) -> Vec<(String, String)> {
+
     //for every !x.is_empty push as an aftermath into a vec
     //do this rigorously for every variable so each of em could be distinguished for translate into token process
     let mut preserved: Vec<(String, String)> = Vec::new();
@@ -59,9 +55,11 @@ fn preservevalue(hostname: Option<String>, banner: Option<String>, password: Opt
         
         }
     }
-
- preserved
+    let give_vec = take(preserved);
+    //in here we create another var, to be passed to the next fn we want to give to
+ 
 }
 
+fn take(the_vec: Vec<(String, String)>){}
 
 fn main (){}
