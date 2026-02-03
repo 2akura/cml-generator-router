@@ -1,0 +1,15 @@
+{
+  "name": "fyp_vm",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "fyp_vm_bg.wasm",
+    "fyp_vm.js",
+    "fyp_vm.d.ts"
+  ],
+  "main": "fyp_vm.js",
+  "types": "fyp_vm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
